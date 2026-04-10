@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-primary: #00e6a8; /* Bright mint green from the reference */
+  --color-primary-dim: rgba(0, 230, 168, 0.1);
+  --color-primary-dark: #00c48f;
+  --color-text-main: #0f172a; /* Very dark slate for headings */
+  --color-text-muted: #64748b; /* Slate gray for body */
+  --color-border: #e2e8f0;
+  --color-dark-bg: #0b1120; /* Dark navy background for specific sections */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-main antialiased selection:bg-primary selection:text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .bg-white-gradient {
+    background: radial-gradient(circle at top center, #ffffff 0%, #f8fafc 100%);
+  }
+
+  .limitless-card {
+    @apply relative overflow-hidden rounded-3xl bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300;
+  }
+  
+  .limitless-glass {
+    @apply bg-white/80 backdrop-blur-md border-b border-slate-200;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00e6a8] to-[#00bfff];
+  }
+
+  .btn-primary {
+    @apply bg-primary text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-primary-dark transition-colors inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-100 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-slate-200 transition-colors inline-flex items-center justify-center gap-2;
+  }
+}
