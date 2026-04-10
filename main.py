@@ -13,10 +13,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(auth.router, prefix="/auth", tags=["auth"])
+# app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(bank.router, prefix="/bank", tags=["bank"])
 app.include_router(dashboard.router, prefix="/dashboard", tags=["dashboard"])
-app.include_router(approvals.router, prefix="/approvals", tags=["approvals"])
+# app.include_router(approvals.router, prefix="/approvals", tags=["approvals"])
 app.include_router(webhook.router, prefix="/webhook", tags=["webhook"])
 
 @app.on_event("startup")
